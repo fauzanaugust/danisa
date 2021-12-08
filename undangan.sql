@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2021 at 04:58 AM
+-- Generation Time: Dec 08, 2021 at 02:49 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `komentar` (
   `id` int(11) NOT NULL,
   `pengirim` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
   `komentar` text NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,10 +39,11 @@ CREATE TABLE `komentar` (
 -- Dumping data for table `komentar`
 --
 
-INSERT INTO `komentar` (`id`, `pengirim`, `komentar`, `create_time`) VALUES
-(6, 'Fauzan', 'Semoga Langgeng sampai akhir hayat', '2021-12-07 12:50:44'),
-(8, 'Widadi', 'Lah Ini kan Nikahan saya sendiri', '2021-12-07 13:00:02'),
-(22, 'Nita', 'Akhirnya nikah juga', '2021-12-08 02:12:29');
+INSERT INTO `komentar` (`id`, `pengirim`, `alamat`, `komentar`, `create_time`) VALUES
+(6, 'Fauzan', 'Dinas Ketahanan Pangan', 'Semoga Langgeng sampai akhir hayat', '2021-12-08 07:28:36'),
+(8, 'Widadi', 'Tangsel', 'Lah Ini kan Nikahan saya sendiri', '2021-12-08 07:28:48'),
+(22, 'Nita', 'Manokwari', 'Akhirnya nikah juga', '2021-12-08 07:28:52'),
+(23, 'Fauzan', 'Ciledug', 'Semoga selamat sampai tujuan', '2021-12-08 07:28:22');
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,7 @@ ALTER TABLE `undangan`
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `undangan`
