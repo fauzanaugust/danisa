@@ -1,0 +1,19 @@
+DirectoryIndex index.php
+RewriteEngine on
+
+#line dibawah berfungsi untuk meng ignore folder agar tdk direwrite dengan index.php
+RewriteCond $1 !^(index\.php|assets|css|fonts|images|js|public|files|robots.txt)
+
+#ini untuk mengabaikan index.php
+RewriteRule ^(.*)$ ./index.php/$1 [L]
+
+# Disable Directory Browsing
+Options All -Indexes
+
+<IfModule !mod_rewrite.c>
+    # If we don't have mod_rewrite installed, all 404's
+    # can be sent to index.php, and everything works as normal.
+    # Submitted by: ElliotHaughin
+
+    ErrorDocument 404 /index.php
+</IfModule>
